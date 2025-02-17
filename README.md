@@ -39,8 +39,8 @@
 
 1. Установите Memcached:
    ```bash
-   sudo apt update
-   sudo apt install memcached
+   sudo apt-get update
+   sudo apt-get install memcached
    ```
 
 2. Запустите Memcached:
@@ -55,8 +55,7 @@
 
 **Скриншот `systemctl status memcached`:**
 
-![systemctl status memcached](https://i.imgur.com/xyz1234.png)  
-*(Пример скриншота, где видно, что Memcached запущен и активен.)*
+![systemctl status memcached](img/2.png)  
 
 ---
 

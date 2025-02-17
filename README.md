@@ -37,18 +37,18 @@
 
 **Установка и запуск Memcached:**
 
-1. Установите Memcached:
+1. Установим Memcached:
    ```bash
    sudo apt-get update
    sudo apt-get install memcached
    ```
 
-2. Запустите Memcached:
+2. Запустим Memcached:
    ```bash
    sudo systemctl start memcached
    ```
 
-3. Проверьте статус Memcached:
+3. Проверим статус Memcached:
    ```bash
    sudo systemctl status memcached
    ```
@@ -71,29 +71,23 @@
 
 **Шаги для выполнения:**
 
-1. Подключитесь к Memcached с помощью `telnet` или `nc`:
+1. Подключаемся к Memcached с помощью `telnet`:
    ```bash
    telnet localhost 11211
    ```
 
-2. Запишите несколько ключей с TTL 5 секунд:
+2. Записываем несколько ключей с TTL 5 секунд:
    ```bash
-   set key1 0 5 5
+   set key1 0 5 6
    value1
-   set key2 0 5 6
-   value2
    ```
 
-3. Подождите 5 секунд и проверьте наличие ключей:
+3. Ждём 5 секунд и проверяем наличие ключей:
    ```bash
    get key1
-   get key2
    ```
 
-**Скриншот, где видно, что ключи удалились через 5 секунд:**
-
-![Memcached TTL](https://i.imgur.com/abcd5678.png)  
-*(Пример скриншота, где видно, что ключи отсутствуют после истечения TTL.)*
+![Memcached TTL](img/3.png)  
 
 ---
 
@@ -107,32 +101,27 @@
 
 ### Решение 4. Запись данных в Redis
 
-**Шаги для выполнения:**
-
-1. Установите Redis:
+1. Установим Redis:
    ```bash
-   sudo apt update
-   sudo apt install redis
+   sudo apt-get install redis
    ```
 
-2. Запишите несколько ключей в Redis:
+2. Запишем несколько ключей в Redis:
    ```bash
    redis-cli
    set key1 value1
    set key2 value2
    ```
 
-3. Получите все ключи и их значения:
+3. Получим все ключи и их значения:
    ```bash
    keys *
    get key1
    get key2
    ```
 
-**Скриншот операции в `redis-cli`:**
-
-![Redis CLI](https://i.imgur.com/efgh9101.png)  
-*(Пример скриншота, где видно запись и чтение ключей в Redis.)*
+![Redis CLI](img/4.1.png)
+![Redis CLI](img/4.2.png)
 
 ---
 
@@ -149,27 +138,22 @@
 
 ### Решение 5*. Работа с числами
 
-**Шаги для выполнения:**
-
-1. Запишите ключ `key5` со значением 5:
+1. Запиcываем ключ `key5` со значением 5:
    ```bash
    redis-cli
    set key5 5
    ```
 
-2. Увеличьте значение ключа `key5` на 5:
+2. Увеличем значение ключа `key5` на 5:
    ```bash
    incrby key5 5
    ```
 
-3. Проверьте значение ключа `key5`:
+3. Проверяем значение ключа `key5`:
    ```bash
    get key5
    ```
 
-**Скриншот, где видно, что значение `key5` стало равно 10:**
-
-![Redis Numbers](https://i.imgur.com/ijkl1122.png)  
-*(Пример скриншота, где видно выполнение операций и результат.)*
+![Redis Numbers](img/5.png)  
 
 ---

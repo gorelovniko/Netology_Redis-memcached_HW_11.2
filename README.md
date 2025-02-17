@@ -35,8 +35,6 @@
 
 ### Решение 2. Memcached
 
-**Установка и запуск Memcached:**
-
 1. Установим Memcached:
    ```bash
    sudo apt-get update
@@ -53,8 +51,6 @@
    sudo systemctl status memcached
    ```
 
-**Скриншот `systemctl status memcached`:**
-
 ![systemctl status memcached](img/2.png)  
 
 ---
@@ -68,8 +64,6 @@
 ---
 
 ### Решение 3. Удаление по TTL в Memcached
-
-**Шаги для выполнения:**
 
 1. Подключаемся к Memcached с помощью `telnet`:
    ```bash
